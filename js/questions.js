@@ -145,13 +145,57 @@ let questions = [
   },
   {
     numb: 14,
-    question: "Bibliometry is -",
-    answer: "Information Management Tool",
+    question: "Which of the following is a chat engine?",
+    answer: "None of these",
     options: [
-      " Function of Library Network",
-      "Information Management Service",
-      "Information Management Tool",
-      "Library Service"
+      "Google Bol",
+      "Yahoo Talk",
+      "Rediff Messenger",
+      "None of these"
+    ]
+  },
+  {
+    numb: 15,
+    question: "Video conferencing is done through -",
+    answer: "IP Network",
+    options: [
+      "Telephone Network",
+      "IP Network",
+      "TV",
+      "None of these"
+    ]
+  },
+  {
+    numb: 16,
+    question: "Learning online through internet is also known as -",
+    answer: "IE-learning",
+    options: [
+      "E-teaching",
+      "Chatting",
+      "E-learning",
+      "Video Conferencing"
+    ]
+  },
+  {
+    numb: 17,
+    question: "Which of the following is a telecommunication device?",
+    answer: "All of these",
+    options: [
+      "Telephone",
+      "Telegraph",
+      "Computer with Internet",
+      "All of these"
+    ]
+  },
+  {
+    numb: 18,
+    question: "Which of the following is a video compression technology?",
+    answer: "MPEG",
+    options: [
+      "MPEG",
+      "NPEG",
+      "LPEG",
+      "OPEG"
     ]
   },
 ];
