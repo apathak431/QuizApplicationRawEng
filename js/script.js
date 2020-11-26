@@ -172,6 +172,13 @@ function showResult(personname) {
         let scoreTag = '<span>and sorry ' + name + ' 😐, You got only <p>' + userScore + '</p> out of <p>' + 5 + '</p></span>';
         scoreText.innerHTML = scoreTag;
     }
+    const ReportText = result_box.querySelector(".score_text_report");
+    let ReportTag = '<span><p>' + userScore + ' Questions were correct while ' + (5 - userScore) + ' were incorrect.</p></span>';
+    ReportText.innerHTML = ReportTag;
+
+    const QueBreakdown = result_box.querySelector(".quebreak");
+
+    QueBreakdown.innerHTML = Breakdown;
 }
 
 function startTimer(time) {

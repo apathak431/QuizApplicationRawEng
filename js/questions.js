@@ -168,7 +168,7 @@ let questions = [
   {
     numb: 16,
     question: "Learning online through internet is also known as -",
-    answer: "IE-learning",
+    answer: "E-learning",
     options: [
       "E-teaching",
       "Chatting",

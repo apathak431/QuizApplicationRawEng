@@ -380,7 +380,28 @@ footer button.show{
     padding: 0 4px;
     font-weight: 600;
 }
+.result_box .score_text_report span{
+    display: flex;
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: 500;
+}
 
+.result_box .quebreak span p{
+    padding: 0 4px;
+    font-weight: 600;
+}
+.result_box .quebreak span{
+    display: flex;
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.result_box .score_text_report span p{
+    padding: 0 4px;
+    font-weight: 600;
+}
 .result_box .buttons{
     display: flex;
     margin: 20px 0;
