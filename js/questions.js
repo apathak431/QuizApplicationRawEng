@@ -198,4 +198,26 @@ let questions = [
       "OPEG"
     ]
   },
+  {
+    numb: 19,
+    question: "DuckDuckGo is a",
+    answer: "search engine",
+    options: [
+      "search engine",
+      "Web browser",
+      "virus",
+      "news Web site"
+    ]
+  },
+  {
+    numb: 20,
+    question: "Mobikwik is the name of a ",
+    answer: "Mobile wallet and online payment system",
+    options: [
+      "Mobile wallet and online payment system",
+      "White Label ATM entity",
+      "Brown Label ATM entity",
+      "Online shopping portal"
+    ]
+  },
 ];

@@ -13,7 +13,7 @@ const timeCount = document.querySelector(".timer .timer_sec");
 
 // if startQuiz button clicked
 start_btn.onclick = () => {
-    var name = document.getElementById("personname").value;
+    var personname = document.getElementById("personname").value;
     info_box.classList.add("activeInfo"); //show info box
 }
 
@@ -26,20 +26,19 @@ exit_btn.onclick = () => {
 continue_btn.onclick = () => {
     info_box.classList.remove("activeInfo"); //hide info box
     quiz_box.classList.add("activeQuiz"); //show quiz box
-    showQuetions(0); //calling showQestions function
+    showQuetions((Math.floor((Math.random() * 20) + 1)), 1); //calling showQestions function
     queCounter(1); //passing 1 parameter to queCounter
     startTimer(120); //calling startTimer function
     startTimerLine(0); //calling startTimerLine function
 }
 
 let timeValue = 120;
-let que_count = 0;
-let que_numb = 1;
+let que_count = 1;
+let que_numb = Math.floor((Math.random() * 20) + 1);
 let userScore = 0;
 let counter;
 let counterLine;
 let widthValue = 0;
-
 const restart_quiz = result_box.querySelector(".buttons .restart");
 const quit_quiz = result_box.querySelector(".buttons .quit");
 
@@ -48,11 +47,11 @@ restart_quiz.onclick = () => {
     quiz_box.classList.add("activeQuiz"); //show quiz box
     result_box.classList.remove("activeResult"); //hide result box
     timeValue = 120;
-    que_count = 0;
-    que_numb = 1;
+    que_count = 1;
+    que_numb = Math.floor((Math.random() * 20) + 1);;
     userScore = 0;
     widthValue = 0;
-    showQuetions(que_count); //calling showQestions function
+    showQuetions(que_count, que_count); //calling showQestions function
     queCounter(que_numb); //passing que_numb value to queCounter
     clearInterval(counter); //clear counter
     clearInterval(counterLine); //clear counterLine
@@ -72,14 +71,15 @@ const bottom_ques_counter = document.querySelector("footer .total_que");
 
 // if Next Que button clicked
 next_btn.onclick = () => {
-    if (que_count < questions.length - 1) { //if question count is less than total question length
+    if (que_count < 5) { //if question count is less than total question length
 
         que_count++; //increment the que_count value
-        que_numb++; //increment the que_numb value
+
+        que_numb = Math.floor((Math.random() * 20) + 1); //Random Number
 
 
-        showQuetions(que_count); //calling showQestions function
-        queCounter(que_numb); //passing que_numb value to queCounter
+        showQuetions(que_numb, que_count); //calling showQestions function
+        queCounter(que_count); //passing que_numb value to queCounter
         clearInterval(counter); //clear counter
         clearInterval(counterLine); //clear counterLine
         startTimer(timeValue); //calling startTimer function
@@ -94,11 +94,11 @@ next_btn.onclick = () => {
 }
 
 // getting questions and options from array
-function showQuetions(index) {
+function showQuetions(index, num) {
     const que_text = document.querySelector(".que_text");
 
     //creating a new span and div tag for question and option and passing the value using array index
-    let que_tag = '<span>' + questions[index].numb + ". " + questions[index].question + '</span>';
+    let que_tag = '<span>' + num + ". " + questions[index].question + '</span>';
     let option_tag = '<div class="option"><span>' + questions[index].options[0] + '</span></div>'
         + '<div class="option"><span>' + questions[index].options[1] + '</span></div>'
         + '<div class="option"><span>' + questions[index].options[2] + '</span></div>'
@@ -157,15 +157,15 @@ function showResult() {
     const scoreText = result_box.querySelector(".score_text");
     if (userScore > 3) { // if user scored more than 3
         //creating a new span tag and passing the user score number and total question number
-        let scoreTag = '<span>and congrats ' + name + '! 🎉, You got <p>' + userScore + '</p> out of <p>' + questions.length + '</p></span>';
+        let scoreTag = '<span>and congrats! 🎉, You got <p>' + userScore + '</p> out of <p>' + questions.length + '</p></span>';
         scoreText.innerHTML = scoreTag;  //adding new span tag inside score_Text
     }
     else if (userScore > 2) { // if user scored more than 1
-        let scoreTag = '<span>and nice ' + name + ' 😎, You got <p>' + userScore + '</p> out of <p>' + questions.length + '</p></span>';
+        let scoreTag = '<span>and nice 😎, You got <p>' + userScore + '</p> out of <p>' + questions.length + '</p></span>';
         scoreText.innerHTML = scoreTag;
     }
     else { // if user scored less than 1
-        let scoreTag = '<span>and sorry ' + name + ' 😐, You got only <p>' + userScore + '</p> out of <p>' + questions.length + '</p></span>';
+        let scoreTag = '<span>and sorry 😐, You got only <p>' + userScore + '</p> out of <p>' + questions.length + '</p></span>';
         scoreText.innerHTML = scoreTag;
     }
 }
