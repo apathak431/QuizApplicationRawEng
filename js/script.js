@@ -20,13 +20,26 @@ function myFunction() {
     name = document.getElementById("personname").value;
 }
 
+//This function to stop questions from repeating
+list_que = [];
+function generateRandom() {
+    var num = Math.floor((Math.random() * 19) + 1);
+    for (i = 0; i < 5; i++) {
+        if (num == list_que[i]) {
+            generateRandom();
+        }
+    }
+    list_que.push(num);
+    return num;
+}
+
 // if exitQuiz button clicked
 exit_btn.onclick = () => {
     info_box.classList.remove("activeInfo"); //hide info box
 }
 let timeValue = 120;
 let que_count = 1;
-let que_numb = Math.floor((Math.random() * 20) + 1);
+let que_numb = generateRandom();
 let userScore = 0;
 let counter;
 let counterLine;
@@ -53,7 +66,7 @@ restart_quiz.onclick = () => {
     result_box.classList.remove("activeResult"); //hide result box
     timeValue = 120;
     que_count = 1;
-    que_numb = Math.floor((Math.random() * 20) + 1);;
+    que_numb = generateRandom();
     userScore = 0;
     widthValue = 0;
     showQuetions(que_count, que_count); //calling showQestions function
@@ -80,7 +93,7 @@ next_btn.onclick = () => {
 
         que_count++; //increment the que_count value
 
-        que_numb = Math.floor((Math.random() * 20) + 1); //Random Number
+        que_numb = generateRandom(); //Random Number
 
         showQuetions(que_numb, que_count); //calling showQestions function
         queCounter(que_count); //passing que_numb value to queCounter
