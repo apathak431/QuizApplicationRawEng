@@ -82,8 +82,6 @@ next_btn.onclick = () => {
 
         que_numb = Math.floor((Math.random() * 20) + 1); //Random Number
 
-        timetake.push(counter);
-        totaltime = totaltime + (counter);
         showQuetions(que_numb, que_count); //calling showQestions function
         queCounter(que_count); //passing que_numb value to queCounter
         clearInterval(counter); //clear counter
@@ -93,8 +91,9 @@ next_btn.onclick = () => {
         timeText.textContent = "Time Left"; //change the timeText to Time Left
         next_btn.classList.remove("show"); //hide the next button
     } else {
-        timetake.push(counter);
-        totaltime = totaltime + (counter);
+        for (i = 0; i < 5; i++) {
+            totaltime = totaltime + timetake[i];
+        }
         clearInterval(counter); //clear counter
         clearInterval(counterLine); //clear counterLine
         showResult(personname); //calling showResult function
@@ -206,12 +205,15 @@ function startTimer(time) {
                     console.log("Time Off: Auto selected correct answer.");
                 }
             }
+
             for (i = 0; i < allOptions; i++) {
                 option_list.children[i].classList.add("disabled"); //once user select an option then disabled all options
             }
             next_btn.classList.add("show"); //show the next button if user selected any option
         }
+        timetake.push((120 - time));
     }
+
 }
 
 function startTimerLine(time) {

@@ -388,6 +388,8 @@ footer button.show{
 }
 
 .result_box .quebreak span p{
+     text-align: center;
+    text-decoration: crimson;
     padding: 0 4px;
     font-weight: 600;
 }
