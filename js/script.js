@@ -13,8 +13,11 @@ const timeCount = document.querySelector(".timer .timer_sec");
 
 // if startQuiz button clicked
 start_btn.onclick = () => {
-    var personname = document.getElementById("personname").value;
+    myFunction();
     info_box.classList.add("activeInfo"); //show info box
+}
+function myFunction() {
+    name = document.getElementById("personname").value;
 }
 
 // if exitQuiz button clicked
@@ -28,6 +31,7 @@ let userScore = 0;
 let counter;
 let counterLine;
 let widthValue = 0;
+
 // if continueQuiz button clicked
 continue_btn.onclick = () => {
     info_box.classList.remove("activeInfo"); //hide info box
@@ -89,7 +93,7 @@ next_btn.onclick = () => {
     } else {
         clearInterval(counter); //clear counter
         clearInterval(counterLine); //clear counterLine
-        showResult(); //calling showResult function
+        showResult(personname); //calling showResult function
     }
 }
 
@@ -150,22 +154,22 @@ function optionSelected(answer) {
     next_btn.classList.add("show"); //show the next button if user selected any option
 }
 
-function showResult() {
+function showResult(personname) {
     info_box.classList.remove("activeInfo"); //hide info box
     quiz_box.classList.remove("activeQuiz"); //hide quiz box
     result_box.classList.add("activeResult"); //show result box
     const scoreText = result_box.querySelector(".score_text");
     if (userScore > 3) { // if user scored more than 3
         //creating a new span tag and passing the user score number and total question number
-        let scoreTag = '<span>and congrats! 🎉, You got <p>' + userScore + '</p> out of <p>' + 5 + '</p></span>';
+        let scoreTag = '<span>and congrats! ' + name + ' 🎉, You got <p>' + userScore + '</p> out of <p>' + 5 + '</p></span>';
         scoreText.innerHTML = scoreTag;  //adding new span tag inside score_Text
     }
     else if (userScore > 2) { // if user scored more than 1
-        let scoreTag = '<span>and nice 😎, You got <p>' + userScore + '</p> out of <p>' + 5 + '</p></span>';
+        let scoreTag = '<span>and nice ' + name + ' 😎, You got <p>' + userScore + '</p> out of <p>' + 5 + '</p></span>';
         scoreText.innerHTML = scoreTag;
     }
     else { // if user scored less than 1
-        let scoreTag = '<span>and sorry 😐, You got only <p>' + userScore + '</p> out of <p>' + 5 + '</p></span>';
+        let scoreTag = '<span>and sorry ' + name + ' 😐, You got only <p>' + userScore + '</p> out of <p>' + 5 + '</p></span>';
         scoreText.innerHTML = scoreTag;
     }
 }
