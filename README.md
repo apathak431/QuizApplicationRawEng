@@ -1,11 +1,11 @@
 # QuizApplicationRawEng
 
-This Quiz Application is for final round interview - ContentStack 
+# This Quiz Application is for final round interview - ContentStack 
 
-Instructions :
-Download zip file - extract it and run index.html file. 
+## Instructions :
+Download zip file - extract it and run **index.html** file. 
 
-Key features of this applications are as follows:
+## Key features of this applications are as follows:
 
 1. Accept the name of the person and generate a quiz consisting of 5 questions. 
 
