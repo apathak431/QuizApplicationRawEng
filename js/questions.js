@@ -79,13 +79,79 @@ let questions = [
   },
   {
     numb: 8,
-    question: "Which of the following is/ are not part of the CPU?",
-    answer: "Primary storage",
+    question: "Which of the following represents the fastest data transmission speed?",
+    answer: "gbps",
     options: [
-      "Primary storage",
-      "Registers",
-      "Control unit",
-      "ALU"
+      "bandwidth",
+      "bps",
+      "gbps",
+      "kbps"
+    ]
+  },
+  {
+    numb: 9,
+    question: "Which one of the following is computer high-level programming language?",
+    answer: "All of the above",
+    options: [
+      "COBOL",
+      "PASCAL",
+      "BASIC",
+      "All of the above"
+    ]
+  },
+  {
+    numb: 10,
+    question: " The domain name of the E-mail address mark.sttol@ITdesk.info is -",
+    answer: "ITdesk.info",
+    options: [
+      "mark.sttol",
+      ".sttol",
+      "ITdesk.info",
+      ".info"
+    ]
+  },
+  {
+    numb: 11,
+    question: "Which of the following is not a cyber crime?",
+    answer: "Online Chatting",
+    options: [
+      "Phishing",
+      "Cyber Stalking",
+      "Identity Theft",
+      "Online Chatting"
+    ]
+  },
+  {
+    numb: 12,
+    question: "In the field of computer, VIRUS stands for -",
+    answer: "Vital Information Resource Under Siege",
+    options: [
+      "Very Intelligent Result Until Source",
+      "Vital Information Resource Under Siege",
+      "Viral Important Record User Searched",
+      " Very Interchanged Resource Under Search"
+    ]
+  },
+  {
+    numb: 13,
+    question: "Bibliometry is -",
+    answer: "Information Management Tool",
+    options: [
+      " Function of Library Network",
+      "Information Management Service",
+      "Information Management Tool",
+      "Library Service"
+    ]
+  },
+  {
+    numb: 14,
+    question: "Bibliometry is -",
+    answer: "Information Management Tool",
+    options: [
+      " Function of Library Network",
+      "Information Management Service",
+      "Information Management Tool",
+      "Library Service"
     ]
   },
 ];
