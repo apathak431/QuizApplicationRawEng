@@ -392,6 +392,8 @@ footer button.show{
     font-weight: 600;
 }
 .result_box .quebreak span{
+    text-align: center;
+    text-decoration: crimson;
     display: flex;
     margin: 10px 0;
     font-size: 18px;

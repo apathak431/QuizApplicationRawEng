@@ -31,7 +31,8 @@ let userScore = 0;
 let counter;
 let counterLine;
 let widthValue = 0;
-
+let timetake = [];
+let totaltime = 0;
 // if continueQuiz button clicked
 continue_btn.onclick = () => {
     info_box.classList.remove("activeInfo"); //hide info box
@@ -81,7 +82,8 @@ next_btn.onclick = () => {
 
         que_numb = Math.floor((Math.random() * 20) + 1); //Random Number
 
-
+        timetake.push(counter);
+        totaltime = totaltime + (counter);
         showQuetions(que_numb, que_count); //calling showQestions function
         queCounter(que_count); //passing que_numb value to queCounter
         clearInterval(counter); //clear counter
@@ -91,6 +93,8 @@ next_btn.onclick = () => {
         timeText.textContent = "Time Left"; //change the timeText to Time Left
         next_btn.classList.remove("show"); //hide the next button
     } else {
+        timetake.push(counter);
+        totaltime = totaltime + (counter);
         clearInterval(counter); //clear counter
         clearInterval(counterLine); //clear counterLine
         showResult(personname); //calling showResult function
@@ -177,7 +181,7 @@ function showResult(personname) {
     ReportText.innerHTML = ReportTag;
 
     const QueBreakdown = result_box.querySelector(".quebreak");
-
+    let Breakdown = '<p>Time taken to attempt Question 1 : ' + timetake[0] + ' seconds.<br>Time taken to attempt Question 2 : ' + timetake[1] + ' seconds.<br>Time taken to attempt Question 3 : ' + timetake[2] + ' seconds.<br>Time taken to attempt Question 4 : ' + timetake[3] + ' seconds.<br>Time taken to attempt Question 5 : ' + timetake[4] + ' seconds.</p><br> <span><p>You took ' + totaltime + ' seconds to attempt complete test.</p></span>';
     QueBreakdown.innerHTML = Breakdown;
 }
 
